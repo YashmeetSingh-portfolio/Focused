@@ -1,0 +1,73 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="expo.modules.appblocker" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+6
+7    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+7-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:3:3-75
+7-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:3:20-72
+8    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+8-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:4:3-85
+8-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:4:20-82
+9
+10    <application>
+10-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:5:3-34:17
+11        <service
+11-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:6:5-11:7
+12            android:name="expo.modules.appblocker.AppBlockerService"
+12-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:7:9-42
+13            android:enabled="true"
+13-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:8:9-31
+14            android:exported="false"
+14-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:9:9-33
+15            android:foregroundServiceType="dataSync" />
+15-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:10:9-49
+16
+17        <receiver
+17-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:12:5-20:16
+18            android:name="expo.modules.appblocker.BootReceiver"
+18-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:13:9-37
+19            android:enabled="true"
+19-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:14:9-31
+20            android:exported="false" >
+20-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:15:9-33
+21            <intent-filter>
+21-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:16:9-19:25
+22                <action android:name="android.intent.action.BOOT_COMPLETED" />
+22-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:17:13-75
+22-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:17:21-72
+23                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+23-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:18:13-78
+23-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:18:21-75
+24            </intent-filter>
+25        </receiver>
+26        <receiver
+26-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:21:5-33:16
+27            android:name="expo.modules.appblocker.AppAdminReceiver"
+27-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:22:9-41
+28            android:description="@string/admin_description"
+28-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:24:9-56
+29            android:exported="true"
+29-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:26:9-32
+30            android:label="Focused Admin"
+30-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:23:9-38
+31            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+31-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:25:9-66
+32            <meta-data
+32-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:27:9-29:52
+33                android:name="android.app.device_admin"
+33-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:28:13-52
+34                android:resource="@xml/device_admin" />
+34-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:29:13-49
+35
+36            <intent-filter>
+36-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:30:9-32:25
+37                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+37-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:31:13-78
+37-->C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:31:21-75
+38            </intent-filter>
+39        </receiver>
+40    </application>
+41
+42</manifest>

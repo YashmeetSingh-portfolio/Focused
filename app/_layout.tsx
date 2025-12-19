@@ -1,24 +1,55 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Stack, useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import * as AppBlocker from '../modules/app-blocker';
+import { useOnboardingStore } from '../store/onboardingStore';
+import { useSessionStore } from '../store/sessionStore';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+export default function Layout() {
+  const router = useRouter();
+  const { isActive, allowedApps, endTime, stopSession } = useSessionStore();
+  const { hasCompletedOnboarding } = useOnboardingStore();
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+  useEffect(() => {
+    const initApp = async () => {
+      // 1. Check Onboarding first
+      if (!hasCompletedOnboarding) {
+        setTimeout(() => router.replace('/intro'), 100);
+        return;
+      }
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+      // 2. If onboarding complete, check for active session
+      if (isActive && endTime) {
+        if (Date.now() < endTime) {
+          const hasPermissions = AppBlocker.checkOverlayPermission() && AppBlocker.checkUsageStatsPermission();
+
+          if (hasPermissions) {
+            const remainingDuration = Math.max(0, endTime - Date.now());
+            AppBlocker.startBlocking(allowedApps, remainingDuration);
+            setTimeout(() => router.replace('/session'), 100);
+          } else {
+            router.replace('/permissions');
+          }
+        } else {
+          stopSession();
+          AppBlocker.stopBlocking();
+        }
+      }
+    };
+
+    initApp();
+  }, [isActive, hasCompletedOnboarding]);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <GestureHandlerRootView style={styles.container}>
+      <Stack screenOptions={{ headerShown: false }} />
+    </GestureHandlerRootView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

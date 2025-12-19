@@ -1,0 +1,79 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:1:1-35:12
+INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:1:1-35:12
+	package
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:2:5-38
+		INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:3:3-75
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:3:20-72
+uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:4:3-85
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:4:20-82
+application
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:5:3-34:17
+service#expo.modules.appblocker.AppBlockerService
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:6:5-11:7
+	android:enabled
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:8:9-31
+	android:exported
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:9:9-33
+	android:foregroundServiceType
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:10:9-49
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:7:9-42
+receiver#expo.modules.appblocker.BootReceiver
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:12:5-20:16
+	android:enabled
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:14:9-31
+	android:exported
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:15:9-33
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:13:9-37
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:16:9-19:25
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:17:13-75
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:17:21-72
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:18:13-78
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:18:21-75
+receiver#expo.modules.appblocker.AppAdminReceiver
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:21:5-33:16
+	android:label
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:23:9-38
+	android:exported
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:26:9-32
+	android:permission
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:25:9-66
+	android:description
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:24:9-56
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:22:9-41
+meta-data#android.app.device_admin
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:27:9-29:52
+	android:resource
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:29:13-49
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:28:13-52
+intent-filter#action:name:android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:30:9-32:25
+action#android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:31:13-78
+	android:name
+		ADDED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml:31:21-75
+uses-sdk
+INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml
+INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\BlockitClone\modules\app-blocker\android\src\main\AndroidManifest.xml

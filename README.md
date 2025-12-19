@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+# 🛡️ Focused
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Focused** is a powerful productivity application designed to help you reclaim your time and minimize digital distractions. Unlike standard focus timers, Focused employs robust, native-level blocking mechanisms to ensure you stay on task.
 
-## Get started
+## ✨ Key Features
 
-1. Install dependencies
+- **Strict App Blocking**: Blocks distracting apps immediately when you try to open them during a session.
+- **🛡️ Unbreakable Security**:
+  - **Restart Protection**: Sessions persist even if you restart your phone. The blocker automatically resumes immediately after boot.
+  - **Uninstall Protection**: Uses 'Device Administrator' privileges to prevent the app from being easily uninstalled during an active session.
+- **Emergency Key System**: Users are given a limited number of "Emergency Keys" to pause a session, discouraging frequent quitting.
+- **Customizable Duration**: Set your focus sessions for any duration that fits your workflow.
+- **Whitelisting**: Select which apps are allowed (e.g., Phone, Calculator) while blocking everything else.
+- **Premium Aesthetics**: A beautiful, dark-themed UI built with smooth animations and glassmorphism effects.
 
-   ```bash
-   npm install
-   ```
+## 🏗️ Tech Stack
 
-2. Start the app
+Built with modern mobile technologies:
+- **Framework**: [React Native](https://reactnative.dev/) & [Expo](https://expo.dev/) (Managed Workflow with Prebuild)
+- **Navigation**: [Expo Router](https://docs.expo.dev/router/introduction/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand) (with persistence)
+- **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- **Native Modules**: Custom Kotlin modules for:
+  - Checking & Requesting Permissions (Overlay, Usage Stats, Device Admin)
+  - Handling `BOOT_COMPLETED` broadcasts
+  - Foreground Service for active monitoring
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 Installation & Setup
 
-In the output, you'll find options to open the app in a
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/YashmeetSingh-portfolio/Focused.git
+    cd Focused
+    ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+3.  **Build the Android App**
+    Since this project uses custom native code, you cannot use Expo Go. You must build the native client.
+    ```bash
+    npx expo run:android
+    ```
 
-## Get a fresh project
+## 🔐 Permissions Explained
 
-When you're ready, run:
+Focused requires sensitive permissions to function effectively:
 
-```bash
-npm run reset-project
-```
+1.  **Display Over Other Apps (Overlay)**: To show the "Focus Screen" immediately when a blocked app is opened.
+2.  **Usage Access**: To detect which application is currently running in the foreground.
+3.  **Device Administrator**: To prevent the app from being force-stopped or uninstalled while a timer is running.
+4.  **Receive Boot Completed**: To restart the blocking service instantly if the phone is rebooted.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🤝 Contribution
 
-## Learn more
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+built with ❤️ by [Yashmeet Singh](https://github.com/YashmeetSingh-portfolio)
